@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Curso de Inteligência Artificial — Myster_IA</title>
+  <meta name="description" content="Aprenda IA do zero ao avançado. Automatize processos, analise dados e crie agentes que trabalham por você. Acesso imediato." />
+
+  <!-- ============================================================
+       PIXEL TIKTOK — Cole seu Pixel ID abaixo
+  ============================================================ -->
+  <!--
+  <script>
+    !function (w, d, t) {
+      w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];
+      ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie"];
+      ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};
+      for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);
+      ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e};
+      ttq.load=function(e,n){var i="https://analytics.tiktok.com/i18/pixel/events.js";ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=i,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};var o=document.createElement("script");o.type="text/javascript",o.async=!0,o.src=i+"?sdkid="+e+"&lib="+t;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(o,a)};
+      ttq.load('SEU_PIXEL_ID_AQUI');
+      ttq.page();
+    }(window, document, 'ttq');
+  </script>
+  -->
+
+  <!-- ============================================================
+       PIXEL META — Cole seu Pixel ID abaixo
+  ============================================================ -->
+  <!--
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', 'SEU_PIXEL_ID_AQUI');
+    fbq('track', 'PageView');
+  </script>
+  -->
+
+  <style>
+    :root {
+      --bg: #0a0a12;
+      --bg2: #11111f;
+      --bg3: #18182a;
+      --purple: #7c3aed;
+      --purple-light: #a78bfa;
+      --purple-dark: #5b21b6;
+      --green: #10b981;
+      --yellow: #f59e0b;
+      --red: #ef4444;
+      --text: #f1f0ff;
+      --text-muted: #8b8aa8;
+      --border: #2a2a3e;
+      --radius: 14px;
+
+      /* ======================================================
+         LINK DE AFILIADO — troque aqui se o link mudar
+         ====================================================== */
+      --affiliate-url: 'https://experttcursos.com.br/inteligenciaartificial?ref=F106385760R';
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* ── HEADER ── */
+    header {
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      background: rgba(10,10,18,0.95);
+      backdrop-filter: blur(12px);
+      z-index: 100;
+    }
+
+    .logo { font-size: 20px; font-weight: 800; }
+    .logo span { color: var(--purple-light); }
+
+    .header-cta {
+      background: var(--purple);
+      color: white;
+      font-weight: 700;
+      font-size: 13px;
+      padding: 8px 18px;
+      border-radius: 8px;
+      transition: background .2s;
+    }
+
+    .header-cta:hover { background: var(--purple-dark); }
+
+    /* ── HERO ── */
+    .hero {
+      padding: 72px 24px 56px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .hero::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 40% at 50% -10%, rgba(124,58,237,0.2) 0%, transparent 65%);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .urgency-bar {
+      background: linear-gradient(90deg, rgba(239,68,68,0.15), rgba(245,158,11,0.15));
+      border: 1px solid rgba(239,68,68,0.3);
+      border-radius: 8px;
+      padding: 10px 16px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #fca5a5;
+      margin-bottom: 28px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .urgency-dot {
+      width: 8px; height: 8px;
+      background: var(--red);
+      border-radius: 50%;
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: .5; transform: scale(0.8); }
+    }
+
+    .hero h1 {
+      font-size: clamp(26px, 5.5vw, 48px);
+      font-weight: 900;
+      line-height: 1.15;
+      letter-spacing: -1px;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 .hl {
+      background: linear-gradient(135deg, var(--purple-light), var(--green));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-sub {
+      font-size: 17px;
+      color: var(--text-muted);
+      max-width: 540px;
+      margin: 0 auto 16px;
+    }
+
+    .hook-line {
+      font-size: 15px;
+      color: var(--green);
+      font-weight: 600;
+      margin-bottom: 36px;
+    }
+
+    /* ── CTA BLOCK ── */
+    .cta-block {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      max-width: 440px;
+      margin: 0 auto 48px;
+    }
+
+    .cta-block .price-label {
+      font-size: 11px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      margin-bottom: 4px;
+    }
+
+    .cta-block .price-area {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .price-old {
+      font-size: 16px;
+      color: var(--text-muted);
+      text-decoration: line-through;
+    }
+
+    .price-new {
+      font-size: 32px;
+      font-weight: 900;
+      color: var(--green);
+    }
+
+    .price-installment {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: -16px;
+      margin-bottom: 20px;
+    }
+
+    .btn-cta {
+      display: block;
+      width: 100%;
+      background: linear-gradient(135deg, var(--purple), #9333ea);
+      color: white;
+      font-weight: 800;
+      font-size: 16px;
+      padding: 16px 24px;
+      border-radius: 10px;
+      text-align: center;
+      transition: transform .15s, box-shadow .15s;
+      box-shadow: 0 4px 20px rgba(124,58,237,0.4);
+      margin-bottom: 12px;
+    }
+
+    .btn-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(124,58,237,0.5);
+    }
+
+    .guarantee-line {
+      font-size: 12px;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+    }
+
+    /* ── SECTIONS ── */
+    .content {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 24px 64px;
+    }
+
+    .block {
+      margin-bottom: 56px;
+    }
+
+    .block h2 {
+      font-size: 22px;
+      font-weight: 800;
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* ── PROBLEM ── */
+    .problem-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 12px;
+    }
+
+    .problem-item {
+      background: rgba(239,68,68,0.07);
+      border: 1px solid rgba(239,68,68,0.2);
+      border-radius: 10px;
+      padding: 16px;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    .problem-item .pi-icon { font-size: 20px; flex-shrink: 0; margin-top: 2px; }
+    .problem-item p { font-size: 13px; color: var(--text-muted); line-height: 1.5; }
+    .problem-item strong { color: var(--text); font-size: 14px; display: block; margin-bottom: 3px; }
+
+    /* ── SOLUTION ── */
+    .solution-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .solution-item {
+      background: rgba(16,185,129,0.07);
+      border: 1px solid rgba(16,185,129,0.2);
+      border-radius: 10px;
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .solution-item .si-icon { font-size: 24px; flex-shrink: 0; }
+    .solution-item strong { font-size: 15px; display: block; margin-bottom: 3px; }
+    .solution-item p { font-size: 13px; color: var(--text-muted); }
+
+    /* ── FOR WHO ── */
+    .forwho-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 12px;
+    }
+
+    .forwho-item {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px;
+      font-size: 13px;
+      color: var(--text-muted);
+      display: flex;
+      gap: 8px;
+    }
+
+    .forwho-item::before { content: '\u2713'; color: var(--green); font-weight: 700; flex-shrink: 0; }
+
+    /* ── WHAT YOU LEARN ── */
+    .modules {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .module {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 18px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 14px;
+    }
+
+    .module-num {
+      width: 28px; height: 28px;
+      background: rgba(124,58,237,0.2);
+      border-radius: 6px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 12px; font-weight: 700; color: var(--purple-light);
+      flex-shrink: 0;
+    }
+
+    .module strong { display: block; font-size: 14px; }
+    .module span { font-size: 12px; color: var(--text-muted); }
+
+    /* ── GUARANTEE ── */
+    .guarantee-box {
+      background: var(--bg2);
+      border: 2px solid var(--green);
+      border-radius: var(--radius);
+      padding: 28px;
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .guarantee-box .g-icon { font-size: 48px; flex-shrink: 0; }
+    .guarantee-box h3 { font-size: 18px; font-weight: 800; margin-bottom: 8px; color: var(--green); }
+    .guarantee-box p { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
+
+    /* ── FAQ ── */
+    .faq { display: flex; flex-direction: column; gap: 8px; }
+
+    .faq-item {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .faq-q {
+      padding: 16px 20px;
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      user-select: none;
+    }
+
+    .faq-q::after { content: '+'; font-size: 18px; color: var(--purple-light); }
+    .faq-item.open .faq-q::after { content: '\u2212'; }
+
+    .faq-a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .3s ease;
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    .faq-item.open .faq-a { max-height: 300px; }
+    .faq-a-inner { padding: 0 20px 16px; }
+
+    /* ── FINAL CTA ── */
+    .final-cta {
+      background: linear-gradient(135deg, #1a0a3e, #0d1f12);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 48px 32px;
+      text-align: center;
+    }
+
+    .final-cta h2 { font-size: 26px; font-weight: 900; margin-bottom: 12px; }
+    .final-cta p { font-size: 15px; color: var(--text-muted); margin-bottom: 28px; }
+
+    /* ── STICKY BOTTOM BAR (mobile) ── */
+    .sticky-bar {
+      display: none;
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      background: rgba(10,10,18,0.97);
+      backdrop-filter: blur(12px);
+      border-top: 1px solid var(--border);
+      padding: 12px 20px;
+      z-index: 200;
+    }
+
+    .sticky-bar .btn-cta { margin-bottom: 0; font-size: 14px; padding: 13px; }
+
+    @media (max-width: 640px) {
+      .sticky-bar { display: block; }
+      .hero { padding-bottom: 24px; }
+      .guarantee-box { flex-direction: column; text-align: center; }
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 28px 24px;
+      text-align: center;
+      font-size: 12px;
+      color: var(--text-muted);
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    footer a { color: var(--purple-light); }
+    footer .disclaimer { margin-top: 10px; line-height: 1.6; opacity: .65; }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <a href="index.html" class="logo">Myster<span>_IA</span></a>
+  <a href="https://experttcursos.com.br/inteligenciaartificial?ref=F106385760R"
+     target="_blank" rel="noopener"
+     class="header-cta"
+     onclick="trackClick('header')">
+    Quero o Curso →
+  </a>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="urgency-bar">
+    <span class="urgency-dot"></span>
+    Vagas com desconto disponíveis agora
+  </div>
+
+  <h1>Aprenda IA e pare de<br><span class="hl">trocar tempo por dinheiro</span></h1>
+
+  <p class="hero-sub">
+    Do zero ao avançado — sem precisar de formação técnica. Em semanas você cria agentes de IA que automatizam tarefas, analisam dados e geram resultados enquanto você dorme.
+  </p>
+
+  <p class="hook-line">💡 "Eu encontrei R$380 em gastos ocultos em 3 segundos com IA"</p>
+
+  <div class="cta-block">
+    <div class="price-label">Investimento único</div>
+    <div class="price-area">
+      <span class="price-old">R$997</span>
+      <span class="price-new">R$497</span>
+    </div>
+    <div class="price-installment">ou 12x de R$49 no cartão</div>
+    <a href="https://experttcursos.com.br/inteligenciaartificial?ref=F106385760R"
+       target="_blank" rel="noopener"
+       class="btn-cta"
+       onclick="trackClick('hero_cta')">
+      🚀 Quero Começar Agora
+    </a>
+    <div class="guarantee-line">🔒 Garantia de 7 dias • Acesso imediato</div>
+  </div>
+</div>
+
+<!-- CONTENT -->
+<div class="content">
+
+  <!-- PROBLEMA -->
+  <div class="block">
+    <h2>😤 Você se identifica com isso?</h2>
+    <div class="problem-list">
+      <div class="problem-item">
+        <span class="pi-icon">⏰</span>
+        <div>
+          <strong>Sem tempo</strong>
+          <p>Você gasta horas em tarefas repetitivas que poderiam ser automatizadas em minutos.</p>
+        </div>
+      </div>
+      <div class="problem-item">
+        <span class="pi-icon">💸</span>
+        <div>
+          <strong>Dinheiro sumindo</strong>
+          <p>Assinaturas, gastos ocultos e ineficiências que você não consegue enxergar na planilha.</p>
+        </div>
+      </div>
+      <div class="problem-item">
+        <span class="pi-icon">😰</span>
+        <div>
+          <strong>Medo de ficar para trás</strong>
+          <p>Todo mundo falando de IA e você sem saber por onde começar ou se precisa saber programar.</p>
+        </div>
+      </div>
+      <div class="problem-item">
+        <span class="pi-icon">📊</span>
+        <div>
+          <strong>Decisões no achismo</strong>
+          <p>Sem dados, você toma decisões financeiras e de negócio baseado em intuição — e erra caro.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SOLUÇÃO -->
+  <div class="block">
+    <h2>✅ O que muda depois do curso</h2>
+    <div class="solution-list">
+      <div class="solution-item">
+        <span class="si-icon">🤖</span>
+        <div>
+          <strong>Crie seus próprios agentes de IA</strong>
+          <p>Automatize qualquer processo repetitivo. Seu agente trabalha 24h sem errar.</p>
+        </div>
+      </div>
+      <div class="solution-item">
+        <span class="si-icon">📈</span>
+        <div>
+          <strong>Analise ações da B3 com Python + Gemini</strong>
+          <p>Sem precisar de formação em estatística. A IA faz a análise, você toma a decisão.</p>
+        </div>
+      </div>
+      <div class="solution-item">
+        <span class="si-icon">💬</span>
+        <div>
+          <strong>Gerencie finanças via WhatsApp</strong>
+          <p>Em 2026, o controle financeiro é por conversa. Chega de planilhas complexas.</p>
+        </div>
+      </div>
+      <div class="solution-item">
+        <span class="si-icon">🎯</span>
+        <div>
+          <strong>95% de acurácia em previsões de caixa</strong>
+          <p>Saiba com antecedência o que vai acontecer com seu dinheiro — pessoa física ou PME.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PARA QUEM -->
+  <div class="block">
+    <h2>👤 Para quem é esse curso?</h2>
+    <div class="forwho-grid">
+      <div class="forwho-item">Donos de pequenas e médias empresas que querem automatizar processos</div>
+      <div class="forwho-item">Pessoas físicas que querem controlar melhor as finanças com IA</div>
+      <div class="forwho-item">Profissionais que querem se reposicionar no mercado de trabalho</div>
+      <div class="forwho-item">Quem quer criar renda extra vendendo soluções de IA</div>
+      <div class="forwho-item">Iniciantes sem nenhuma experiência com programação</div>
+      <div class="forwho-item">Investidores que querem usar IA para analisar ativos da B3</div>
+    </div>
+  </div>
+
+  <!-- O QUE VOCÊ VAI APRENDER -->
+  <div class="block">
+    <h2>📚 O que você vai aprender</h2>
+    <div class="modules">
+      <div class="module">
+        <div class="module-num">01</div>
+        <div>
+          <strong>Fundamentos de IA sem código</strong>
+          <span>Entenda como a IA funciona e como usar ferramentas sem programar</span>
+        </div>
+      </div>
+      <div class="module">
+        <div class="module-num">02</div>
+        <div>
+          <strong>Google Gemini na prática</strong>
+          <span>Use o modelo mais avançado do Google para automação de tarefas</span>
+        </div>
+      </div>
+      <div class="module">
+        <div class="module-num">03</div>
+        <div>
+          <strong>Python do zero para IA financeira</strong>
+          <span>Scripts simples para análise de dados e previsão de caixa</span>
+        </div>
+      </div>
+      <div class="module">
+        <div class="module-num">04</div>
+        <div>
+          <strong>Criação de Agentes de IA</strong>
+          <span>Construa bots que executam tarefas, respondem clientes e geram relatórios</span>
+        </div>
+      </div>
+      <div class="module">
+        <div class="module-num">05</div>
+        <div>
+          <strong>IA para Finanças Pessoais e PME</strong>
+          <span>Detecte gastos ocultos, preveja receitas e tome decisões com dados</span>
+        </div>
+      </div>
+      <div class="module">
+        <div class="module-num">06</div>
+        <div>
+          <strong>Análise de Ações com IA</strong>
+          <span>Use Python + Gemini para analisar ativos da B3 sem ser especialista</span>
+        </div>
+      </div>
+      <div class="module">
+        <div class="module-num">07</div>
+        <div>
+          <strong>Monetização com IA</strong>
+          <span>Crie e venda agentes de IA como infoprodutos na Hotmart e Kiwify</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GARANTIA -->
+  <div class="block">
+    <div class="guarantee-box">
+      <span class="g-icon">🛡️</span>
+      <div>
+        <h3>Garantia Incondicional de 7 dias</h3>
+        <p>Se por qualquer motivo você não ficar satisfeito nos primeiros 7 dias, é só pedir reembolso. 100% do seu dinheiro de volta, sem burocracia e sem questionamentos. O risco é zero — o ganho é real.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div class="block">
+    <h2>❓ Dúvidas Frequentes</h2>
+    <div class="faq">
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Preciso saber programar para fazer o curso?</div>
+        <div class="faq-a"><div class="faq-a-inner">Não. O curso foi desenvolvido para iniciantes. Você vai aprender desde o básico, com linguagem simples e projetos práticos. Se souber usar um smartphone, você consegue acompanhar.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Quanto tempo vou levar para ver resultados?</div>
+        <div class="faq-a"><div class="faq-a-inner">A maioria dos alunos cria seu primeiro agente de IA nas primeiras 2 semanas de curso. Resultados financeiros aparecem quando você começa a aplicar as ferramentas — e isso acontece desde os primeiros módulos.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">O acesso é vitalício?</div>
+        <div class="faq-a"><div class="faq-a-inner">Sim. Você tem acesso por 1 ano, com possibilidade de renovação. Todas as atualizações de conteúdo são incluídas sem custo adicional enquanto tiver acesso.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Funciona para PME ou só para pessoa física?</div>
+        <div class="faq-a"><div class="faq-a-inner">Os dois. O curso tem módulos específicos para finanças pessoais e para gestão de pequenas e médias empresas. Você escolhe o caminho que faz mais sentido para o seu momento.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Como funciona o pagamento?</div>
+        <div class="faq-a"><div class="faq-a-inner">O pagamento é processado pela Hotmart, plataforma líder no Brasil em cursos digitais. Você pode pagar à vista com desconto ou parcelar em até 12x no cartão. O acesso é liberado imediatamente após a confirmação.</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FINAL CTA -->
+  <div class="final-cta">
+    <h2>Sua próxima decisão define<br>o próximo ano</h2>
+    <p>Quem aprender IA agora vai estar 2 anos à frente de quem esperar.<br>O custo de não agir é maior do que o do curso.</p>
+    <a href="https://experttcursos.com.br/inteligenciaartificial?ref=F106385760R"
+       target="_blank" rel="noopener"
+       class="btn-cta"
+       style="max-width:380px; margin:0 auto 16px;"
+       onclick="trackClick('final_cta')">
+      🚀 Quero Começar Agora — R$497
+    </a>
+    <div class="guarantee-line" style="justify-content:center;">🔒 Garantia de 7 dias • Acesso imediato • Parcelamento em 12x</div>
+  </div>
+
+</div>
+
+<!-- STICKY MOBILE BAR -->
+<div class="sticky-bar">
+  <a href="https://experttcursos.com.br/inteligenciaartificial?ref=F106385760R"
+     target="_blank" rel="noopener"
+     class="btn-cta"
+     onclick="trackClick('sticky_bar')">
+    🚀 Quero o Curso — R$497
+  </a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <a href="index.html">← Voltar para Myster_IA</a>
+  <div class="disclaimer">
+    Este site contém links de afiliados (ref=F106385760R). Ao comprar através do nosso link, você apoia o projeto Myster_IA sem custo adicional. Os preços podem variar. Resultados individuais dependem da dedicação de cada aluno.
+  </div>
+</footer>
+
+<script>
+  // ── FAQ toggle ──
+  function toggleFaq(el) {
+    el.parentElement.classList.toggle('open');
+  }
+
+  // ── Rastreamento de cliques (prepare para o pixel) ──
+  function trackClick(source) {
+    console.log('CTA clicado:', source);
+
+    // Descomente quando tiver o pixel TikTok ativo:
+    // if (window.ttq) ttq.track('ClickButton', { content_name: 'curso-ia-' + source });
+
+    // Descomente quando tiver o pixel Meta ativo:
+    // if (window.fbq) fbq('track', 'InitiateCheckout', { content_name: 'curso-ia-' + source });
+  }
+
+  // ── Oculta sticky bar se CTA principal estiver visível ──
+  const heroCta = document.querySelector('.cta-block');
+  const stickyBar = document.querySelector('.sticky-bar');
+
+  if (heroCta && stickyBar) {
+    const obs = new IntersectionObserver(([e]) => {
+      stickyBar.style.display = e.isIntersecting ? 'none' : 'block';
+    }, { threshold: 0.5 });
+    obs.observe(heroCta);
+  }
+</script>
+
+</body>
+</html>
