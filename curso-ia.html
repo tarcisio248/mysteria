@@ -3,44 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Curso de Inteligência Artificial — Myster_IA</title>
-  <meta name="description" content="Aprenda IA do zero ao avançado. Automatize processos, analise dados e crie agentes que trabalham por você. Acesso imediato." />
-
-  <!-- ============================================================
-       PIXEL TIKTOK — Cole seu Pixel ID abaixo
-  ============================================================ -->
-  <!--
-  <script>
-    !function (w, d, t) {
-      w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];
-      ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie"];
-      ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};
-      for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);
-      ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e};
-      ttq.load=function(e,n){var i="https://analytics.tiktok.com/i18/pixel/events.js";ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=i,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};var o=document.createElement("script");o.type="text/javascript",o.async=!0,o.src=i+"?sdkid="+e+"&lib="+t;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(o,a)};
-      ttq.load('SEU_PIXEL_ID_AQUI');
-      ttq.page();
-    }(window, document, 'ttq');
-  </script>
-  -->
-
-  <!-- ============================================================
-       PIXEL META — Cole seu Pixel ID abaixo
-  ============================================================ -->
-  <!--
-  <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', 'SEU_PIXEL_ID_AQUI');
-    fbq('track', 'PageView');
-  </script>
-  -->
+  <title>Curso de Inteligência Artificial — Do Zero ao Avançado | Myster_IA</title>
+  <meta name="description" content="Aprenda IA do zero ao avançado com o curso mais completo do mercado. 30h de conteúdo, 40 aulas, 10 módulos, acesso vitalício. +85 mil alunos formados." />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%237c3aed'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='system-ui,sans-serif' font-weight='900' font-size='18' fill='white'%3EM%3C/text%3E%3Ccircle cx='24' cy='8' r='4' fill='%2310b981'/%3E%3C/svg%3E">
 
   <style>
     :root {
@@ -57,696 +22,525 @@
       --text-muted: #8b8aa8;
       --border: #2a2a3e;
       --radius: 14px;
-
-      /* ======================================================
-         LINK DE AFILIADO — troque aqui se o link mudar
-         ====================================================== */
-      --affiliate-url: 'https://experttcursos.com.br/inteligenciaartificial?ref=F106385760R';
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      line-height: 1.6;
-    }
-
+    body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; line-height: 1.6; }
     a { color: inherit; text-decoration: none; }
 
-    /* ── HEADER ── */
+    /* HEADER */
     header {
       padding: 16px 24px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      display: flex; align-items: center; justify-content: space-between;
       border-bottom: 1px solid var(--border);
-      position: sticky;
-      top: 0;
+      position: sticky; top: 0;
       background: rgba(10,10,18,0.95);
       backdrop-filter: blur(12px);
-      z-index: 100;
+      z-index: 200;
     }
-
-    .logo { font-size: 20px; font-weight: 800; }
-    .logo span { color: var(--purple-light); }
 
     .header-cta {
-      background: var(--purple);
-      color: white;
-      font-weight: 700;
-      font-size: 13px;
-      padding: 8px 18px;
-      border-radius: 8px;
-      transition: background .2s;
+      background: var(--green); color: #000;
+      font-weight: 800; font-size: 13px;
+      padding: 8px 18px; border-radius: 8px;
+      transition: opacity .2s;
+    }
+    .header-cta:hover { opacity: .85; }
+
+    /* STICKY BAR */
+    .sticky-bar {
+      position: fixed; bottom: 0; left: 0; right: 0;
+      background: linear-gradient(90deg, var(--purple-dark), var(--purple));
+      padding: 14px 24px;
+      display: flex; align-items: center; justify-content: center; gap: 20px;
+      z-index: 300;
+      box-shadow: 0 -4px 20px rgba(0,0,0,.4);
+    }
+    .sticky-bar p { font-size: 14px; font-weight: 700; }
+    .sticky-bar a {
+      background: var(--green); color: #000;
+      font-weight: 800; font-size: 14px;
+      padding: 10px 24px; border-radius: 8px;
+      white-space: nowrap;
     }
 
-    .header-cta:hover { background: var(--purple-dark); }
-
-    /* ── HERO ── */
+    /* HERO */
     .hero {
-      padding: 72px 24px 56px;
+      padding: 64px 24px 48px;
       text-align: center;
-      position: relative;
-      overflow: hidden;
-      max-width: 800px;
-      margin: 0 auto;
+      position: relative; overflow: hidden;
     }
-
     .hero::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background: radial-gradient(ellipse 60% 40% at 50% -10%, rgba(124,58,237,0.2) 0%, transparent 65%);
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(124,58,237,.2) 0%, transparent 70%);
       pointer-events: none;
-      z-index: -1;
     }
 
-    .urgency-bar {
-      background: linear-gradient(90deg, rgba(239,68,68,0.15), rgba(245,158,11,0.15));
-      border: 1px solid rgba(239,68,68,0.3);
-      border-radius: 8px;
-      padding: 10px 16px;
-      font-size: 13px;
-      font-weight: 600;
-      color: #fca5a5;
-      margin-bottom: 28px;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .urgency-dot {
-      width: 8px; height: 8px;
-      background: var(--red);
-      border-radius: 50%;
-      animation: pulse 1.5s infinite;
-    }
-
-    @keyframes pulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: .5; transform: scale(0.8); }
-    }
-
-    .hero h1 {
-      font-size: clamp(26px, 5.5vw, 48px);
-      font-weight: 900;
-      line-height: 1.15;
-      letter-spacing: -1px;
+    .badge {
+      display: inline-block;
+      background: rgba(16,185,129,.15);
+      border: 1px solid rgba(16,185,129,.3);
+      color: var(--green);
+      font-size: 11px; font-weight: 700;
+      letter-spacing: .1em; text-transform: uppercase;
+      padding: 5px 14px; border-radius: 20px;
       margin-bottom: 20px;
     }
 
+    .hero h1 {
+      font-size: clamp(26px, 5vw, 48px);
+      font-weight: 900; line-height: 1.15; letter-spacing: -1px;
+      margin-bottom: 18px;
+    }
     .hero h1 .hl {
       background: linear-gradient(135deg, var(--purple-light), var(--green));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
       background-clip: text;
     }
 
     .hero-sub {
-      font-size: 17px;
-      color: var(--text-muted);
-      max-width: 540px;
-      margin: 0 auto 16px;
+      font-size: 17px; color: var(--text-muted);
+      max-width: 600px; margin: 0 auto 32px;
     }
 
-    .hook-line {
-      font-size: 15px;
-      color: var(--green);
-      font-weight: 600;
-      margin-bottom: 36px;
-    }
+    .price-block { margin-bottom: 28px; }
+    .price-from { font-size: 14px; color: var(--text-muted); text-decoration: line-through; }
+    .price-main { font-size: 48px; font-weight: 900; color: var(--green); line-height: 1; }
+    .price-installment { font-size: 14px; color: var(--text-muted); margin-top: 4px; }
 
-    /* ── CTA BLOCK ── */
-    .cta-block {
-      background: var(--bg2);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 28px;
-      max-width: 440px;
-      margin: 0 auto 48px;
-    }
-
-    .cta-block .price-label {
-      font-size: 11px;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: .08em;
-      margin-bottom: 4px;
-    }
-
-    .cta-block .price-area {
-      display: flex;
-      align-items: baseline;
-      gap: 10px;
-      margin-bottom: 20px;
-    }
-
-    .price-old {
-      font-size: 16px;
-      color: var(--text-muted);
-      text-decoration: line-through;
-    }
-
-    .price-new {
-      font-size: 32px;
-      font-weight: 900;
-      color: var(--green);
-    }
-
-    .price-installment {
-      font-size: 12px;
-      color: var(--text-muted);
-      margin-top: -16px;
-      margin-bottom: 20px;
-    }
-
-    .btn-cta {
-      display: block;
-      width: 100%;
-      background: linear-gradient(135deg, var(--purple), #9333ea);
-      color: white;
-      font-weight: 800;
-      font-size: 16px;
-      padding: 16px 24px;
-      border-radius: 10px;
-      text-align: center;
+    .cta-btn {
+      display: inline-block;
+      background: var(--green); color: #000;
+      font-weight: 900; font-size: 18px;
+      padding: 18px 48px; border-radius: 12px;
       transition: transform .15s, box-shadow .15s;
-      box-shadow: 0 4px 20px rgba(124,58,237,0.4);
-      margin-bottom: 12px;
+      box-shadow: 0 0 30px rgba(16,185,129,.3);
     }
-
-    .btn-cta:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 28px rgba(124,58,237,0.5);
-    }
+    .cta-btn:hover { transform: scale(1.03); box-shadow: 0 0 40px rgba(16,185,129,.5); }
 
     .guarantee-line {
-      font-size: 12px;
-      color: var(--text-muted);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 5px;
+      margin-top: 14px;
+      font-size: 12px; color: var(--text-muted);
     }
 
-    /* ── SECTIONS ── */
-    .content {
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 0 24px 64px;
-    }
-
-    .block {
-      margin-bottom: 56px;
-    }
-
-    .block h2 {
-      font-size: 22px;
-      font-weight: 800;
-      margin-bottom: 20px;
-      padding-bottom: 12px;
+    /* STATS BAR */
+    .stats-bar {
+      background: var(--bg2);
+      border-top: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
+      display: flex; justify-content: center; flex-wrap: wrap; gap: 0;
     }
-
-    /* ── PROBLEM ── */
-    .problem-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap: 12px;
+    .stat-item {
+      padding: 20px 32px;
+      text-align: center;
+      border-right: 1px solid var(--border);
     }
+    .stat-item:last-child { border-right: none; }
+    .stat-num { display: block; font-size: 24px; font-weight: 900; color: var(--purple-light); }
+    .stat-label { font-size: 12px; color: var(--text-muted); }
 
-    .problem-item {
-      background: rgba(239,68,68,0.07);
-      border: 1px solid rgba(239,68,68,0.2);
-      border-radius: 10px;
-      padding: 16px;
-      display: flex;
-      gap: 10px;
-      align-items: flex-start;
-    }
+    /* SECTIONS */
+    .container { max-width: 860px; margin: 0 auto; padding: 56px 24px; }
+    .section-title { font-size: 26px; font-weight: 800; margin-bottom: 8px; }
+    .section-sub { font-size: 15px; color: var(--text-muted); margin-bottom: 36px; }
 
-    .problem-item .pi-icon { font-size: 20px; flex-shrink: 0; margin-top: 2px; }
-    .problem-item p { font-size: 13px; color: var(--text-muted); line-height: 1.5; }
-    .problem-item strong { color: var(--text); font-size: 14px; display: block; margin-bottom: 3px; }
-
-    /* ── SOLUTION ── */
-    .solution-list {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .solution-item {
-      background: rgba(16,185,129,0.07);
-      border: 1px solid rgba(16,185,129,0.2);
-      border-radius: 10px;
-      padding: 16px 20px;
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-
-    .solution-item .si-icon { font-size: 24px; flex-shrink: 0; }
-    .solution-item strong { font-size: 15px; display: block; margin-bottom: 3px; }
-    .solution-item p { font-size: 13px; color: var(--text-muted); }
-
-    /* ── FOR WHO ── */
-    .forwho-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 12px;
-    }
-
-    .forwho-item {
-      background: var(--bg2);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 16px;
-      font-size: 13px;
-      color: var(--text-muted);
-      display: flex;
-      gap: 8px;
-    }
-
-    .forwho-item::before { content: '\u2713'; color: var(--green); font-weight: 700; flex-shrink: 0; }
-
-    /* ── WHAT YOU LEARN ── */
-    .modules {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
+    /* MODULES */
+    .modules { display: flex; flex-direction: column; gap: 12px; }
     .module {
-      background: var(--bg2);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 14px 18px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-size: 14px;
+      background: var(--bg2); border: 1px solid var(--border);
+      border-radius: 10px; padding: 18px 20px;
+      display: flex; align-items: flex-start; gap: 16px;
     }
-
     .module-num {
-      width: 28px; height: 28px;
-      background: rgba(124,58,237,0.2);
-      border-radius: 6px;
+      background: var(--purple); color: white;
+      font-weight: 800; font-size: 13px;
+      min-width: 32px; height: 32px;
+      border-radius: 8px;
       display: flex; align-items: center; justify-content: center;
-      font-size: 12px; font-weight: 700; color: var(--purple-light);
       flex-shrink: 0;
     }
+    .module h4 { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+    .module p { font-size: 13px; color: var(--text-muted); }
 
-    .module strong { display: block; font-size: 14px; }
-    .module span { font-size: 12px; color: var(--text-muted); }
-
-    /* ── GUARANTEE ── */
-    .guarantee-box {
-      background: var(--bg2);
-      border: 2px solid var(--green);
-      border-radius: var(--radius);
-      padding: 28px;
-      display: flex;
-      gap: 20px;
-      align-items: center;
-    }
-
-    .guarantee-box .g-icon { font-size: 48px; flex-shrink: 0; }
-    .guarantee-box h3 { font-size: 18px; font-weight: 800; margin-bottom: 8px; color: var(--green); }
-    .guarantee-box p { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
-
-    /* ── FAQ ── */
-    .faq { display: flex; flex-direction: column; gap: 8px; }
-
-    .faq-item {
-      background: var(--bg2);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      overflow: hidden;
-    }
-
-    .faq-q {
-      padding: 16px 20px;
-      font-weight: 600;
-      font-size: 14px;
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      user-select: none;
-    }
-
-    .faq-q::after { content: '+'; font-size: 18px; color: var(--purple-light); }
-    .faq-item.open .faq-q::after { content: '\u2212'; }
-
-    .faq-a {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height .3s ease;
-      font-size: 13px;
-      color: var(--text-muted);
-      line-height: 1.7;
-    }
-
-    .faq-item.open .faq-a { max-height: 300px; }
-    .faq-a-inner { padding: 0 20px 16px; }
-
-    /* ── FINAL CTA ── */
-    .final-cta {
-      background: linear-gradient(135deg, #1a0a3e, #0d1f12);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 48px 32px;
+    /* BONUSES */
+    .bonuses { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; }
+    .bonus {
+      background: var(--bg2); border: 1px solid rgba(16,185,129,.2);
+      border-radius: var(--radius); padding: 20px;
       text-align: center;
     }
+    .bonus-icon { font-size: 32px; margin-bottom: 10px; display: block; }
+    .bonus h4 { font-size: 14px; font-weight: 700; margin-bottom: 6px; }
+    .bonus p { font-size: 12px; color: var(--text-muted); }
 
-    .final-cta h2 { font-size: 26px; font-weight: 900; margin-bottom: 12px; }
-    .final-cta p { font-size: 15px; color: var(--text-muted); margin-bottom: 28px; }
-
-    /* ── STICKY BOTTOM BAR (mobile) ── */
-    .sticky-bar {
-      display: none;
-      position: fixed;
-      bottom: 0; left: 0; right: 0;
-      background: rgba(10,10,18,0.97);
-      backdrop-filter: blur(12px);
-      border-top: 1px solid var(--border);
-      padding: 12px 20px;
-      z-index: 200;
+    /* TESTIMONIALS */
+    .testimonials { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
+    .testimonial {
+      background: var(--bg2); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 20px;
     }
+    .stars { color: var(--yellow); font-size: 14px; margin-bottom: 10px; }
+    .testimonial p { font-size: 13px; color: var(--text-muted); font-style: italic; line-height: 1.6; margin-bottom: 14px; }
+    .testimonial-name { font-size: 13px; font-weight: 700; }
 
-    .sticky-bar .btn-cta { margin-bottom: 0; font-size: 14px; padding: 13px; }
 
-    @media (max-width: 640px) {
-      .sticky-bar { display: block; }
-      .hero { padding-bottom: 24px; }
-      .guarantee-box { flex-direction: column; text-align: center; }
+    /* INSTRUCTOR */
+    .instructor-box {
+      background: var(--bg2); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 32px;
+      display: grid; grid-template-columns: auto 1fr; gap: 24px; align-items: center;
     }
+    .instructor-avatar {
+      width: 72px; height: 72px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--purple), var(--green));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 28px; font-weight: 900; flex-shrink: 0;
+    }
+    .instructor-box h3 { font-size: 18px; font-weight: 800; margin-bottom: 6px; }
+    .instructor-box p { font-size: 14px; color: var(--text-muted); line-height: 1.7; }
 
-    /* ── FOOTER ── */
+    /* GUARANTEE */
+    .guarantee-box {
+      background: linear-gradient(135deg, rgba(16,185,129,.1), rgba(124,58,237,.1));
+      border: 1px solid rgba(16,185,129,.3);
+      border-radius: var(--radius); padding: 36px;
+      text-align: center;
+    }
+    .guarantee-box .g-icon { font-size: 48px; margin-bottom: 14px; display: block; }
+    .guarantee-box h3 { font-size: 22px; font-weight: 800; margin-bottom: 10px; }
+    .guarantee-box p { font-size: 15px; color: var(--text-muted); max-width: 500px; margin: 0 auto; }
+
+    /* FAQ */
+    .faq { display: flex; flex-direction: column; gap: 12px; }
+    .faq-item {
+      background: var(--bg2); border: 1px solid var(--border);
+      border-radius: 10px; padding: 20px;
+    }
+    .faq-item h4 { font-size: 15px; font-weight: 700; margin-bottom: 8px; color: var(--purple-light); }
+    .faq-item p { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
+
+    /* FINAL CTA */
+    .final-cta {
+      background: linear-gradient(135deg, var(--purple-dark), var(--purple));
+      border-radius: var(--radius); padding: 56px 40px;
+      text-align: center;
+    }
+    .final-cta h2 { font-size: 28px; font-weight: 900; margin-bottom: 12px; }
+    .final-cta p { font-size: 16px; color: rgba(255,255,255,.75); margin-bottom: 28px; }
+
+s); padding: 56px 40px;
+      text-align: center;
+    }
+    .final-cta h2 { font-size: 28px; font-weight: 900; margin-bottom: 12px; }
+    .final-cta p { font-size: 16px; color: rgba(255,255,255,.75); margin-bottom: 28px; }
+
+    /* FOOTER */
     footer {
       border-top: 1px solid var(--border);
-      padding: 28px 24px;
+      padding: 32px 24px 80px;
       text-align: center;
-      font-size: 12px;
-      color: var(--text-muted);
-      max-width: 760px;
-      margin: 0 auto;
+      font-size: 12px; color: var(--text-muted);
     }
+    footer .footer-logo { font-size: 18px; font-weight: 800; margin-bottom: 8px; }
+    footer .footer-logo span { color: var(--purple-light); }
+    footer .disclaimer { max-width: 600px; margin: 12px auto 0; line-height: 1.6; opacity: .7; }
 
-    footer a { color: var(--purple-light); }
-    footer .disclaimer { margin-top: 10px; line-height: 1.6; opacity: .65; }
+    @media (max-width: 640px) {
+      .stats-bar { flex-direction: column; }
+      .stat-item { border-right: none; border-bottom: 1px solid var(--border); }
+      .instructor-box { grid-template-columns: 1fr; text-align: center; }
+      .instructor-avatar { margin: 0 auto; }
+      .sticky-bar { flex-direction: column; gap: 10px; }
+      .final-cta { padding: 40px 20px; }
+    }
   </style>
 </head>
 <body>
 
 <!-- HEADER -->
 <header>
-  <a href="index.html" class="logo">Myster<span>_IA</span></a>
-  <a href="https://experttcursos.com.br/inteligenciaartificial?ref=F106385760R"
-     target="_blank" rel="noopener"
-     class="header-cta"
-     onclick="trackClick('header')">
-    Quero o Curso →
+  <a href="index.html">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 38" height="30" aria-label="Myster_IA">
+      <rect width="38" height="38" rx="8" fill="#7c3aed"/>
+      <text x="19" y="27" text-anchor="middle" font-family="system-ui,sans-serif" font-weight="900" font-size="22" fill="white">M</text>
+      <circle cx="32" cy="7" r="5" fill="#10b981"/>
+      <text x="50" y="27" font-family="system-ui,sans-serif" font-weight="800" font-size="20" fill="#f1f0ff">Myster</text>
+      <text x="111" y="27" font-family="system-ui,sans-serif" font-weight="800" font-size="20" fill="#a78bfa">_IA</text>
+    </svg>
   </a>
+  <a href="https://go.hotmart.com/F106385760R?ap=c684" class="header-cta" target="_blank" rel="noopener">Quero Começar →</a>
 </header>
 
 <!-- HERO -->
 <div class="hero">
-  <div class="urgency-bar">
-    <span class="urgency-dot"></span>
-    Vagas com desconto disponíveis agora
+  <div class="badge">🔥 +85.000 alunos formados</div>
+  <h1>Curso de <span class="hl">Inteligência Artificial</span><br>Do Zero ao Avançado</h1>
+  <p class="hero-sub">Aprenda a usar as principais ferramentas de IA, automatize processos, crie agentes e tome decisões baseadas em dados — sem precisar saber programar.</p>
+
+  <div class="price-block">
+    <div class="price-from">De R$297</div>
+    <div class="price-main">R$97</div>
+    <div class="price-installment">ou 12x de R$10,03 no cartão</div>
   </div>
 
-  <h1>Aprenda IA e pare de<br><span class="hl">trocar tempo por dinheiro</span></h1>
-
-  <p class="hero-sub">
-    Do zero ao avançado — sem precisar de formação técnica. Em semanas você cria agentes de IA que automatizam tarefas, analisam dados e geram resultados enquanto você dorme.
-  </p>
-
-  <p class="hook-line">💡 "Eu encontrei R$380 em gastos ocultos em 3 segundos com IA"</p>
-
-  <div class="cta-block">
-    <div class="price-label">Investimento único</div>
-    <div class="price-area">
-      <span class="price-old">R$997</span>
-      <span class="price-new">R$497</span>
-    </div>
-    <div class="price-installment">ou 12x de R$49 no cartão</div>
-    <a href="https://experttcursos.com.br/inteligenciaartificial?ref=F106385760R"
-       target="_blank" rel="noopener"
-       class="btn-cta"
-       onclick="trackClick('hero_cta')">
-      🚀 Quero Começar Agora
-    </a>
-    <div class="guarantee-line">🔒 Garantia de 7 dias • Acesso imediato</div>
-  </div>
-</div>
-
-<!-- CONTENT -->
-<div class="content">
-
-  <!-- PROBLEMA -->
-  <div class="block">
-    <h2>😤 Você se identifica com isso?</h2>
-    <div class="problem-list">
-      <div class="problem-item">
-        <span class="pi-icon">⏰</span>
-        <div>
-          <strong>Sem tempo</strong>
-          <p>Você gasta horas em tarefas repetitivas que poderiam ser automatizadas em minutos.</p>
-        </div>
-      </div>
-      <div class="problem-item">
-        <span class="pi-icon">💸</span>
-        <div>
-          <strong>Dinheiro sumindo</strong>
-          <p>Assinaturas, gastos ocultos e ineficiências que você não consegue enxergar na planilha.</p>
-        </div>
-      </div>
-      <div class="problem-item">
-        <span class="pi-icon">😰</span>
-        <div>
-          <strong>Medo de ficar para trás</strong>
-          <p>Todo mundo falando de IA e você sem saber por onde começar ou se precisa saber programar.</p>
-        </div>
-      </div>
-      <div class="problem-item">
-        <span class="pi-icon">📊</span>
-        <div>
-          <strong>Decisões no achismo</strong>
-          <p>Sem dados, você toma decisões financeiras e de negócio baseado em intuição — e erra caro.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- SOLUÇÃO -->
-  <div class="block">
-    <h2>✅ O que muda depois do curso</h2>
-    <div class="solution-list">
-      <div class="solution-item">
-        <span class="si-icon">🤖</span>
-        <div>
-          <strong>Crie seus próprios agentes de IA</strong>
-          <p>Automatize qualquer processo repetitivo. Seu agente trabalha 24h sem errar.</p>
-        </div>
-      </div>
-      <div class="solution-item">
-        <span class="si-icon">📈</span>
-        <div>
-          <strong>Analise ações da B3 com Python + Gemini</strong>
-          <p>Sem precisar de formação em estatística. A IA faz a análise, você toma a decisão.</p>
-        </div>
-      </div>
-      <div class="solution-item">
-        <span class="si-icon">💬</span>
-        <div>
-          <strong>Gerencie finanças via WhatsApp</strong>
-          <p>Em 2026, o controle financeiro é por conversa. Chega de planilhas complexas.</p>
-        </div>
-      </div>
-      <div class="solution-item">
-        <span class="si-icon">🎯</span>
-        <div>
-          <strong>95% de acurácia em previsões de caixa</strong>
-          <p>Saiba com antecedência o que vai acontecer com seu dinheiro — pessoa física ou PME.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- PARA QUEM -->
-  <div class="block">
-    <h2>👤 Para quem é esse curso?</h2>
-    <div class="forwho-grid">
-      <div class="forwho-item">Donos de pequenas e médias empresas que querem automatizar processos</div>
-      <div class="forwho-item">Pessoas físicas que querem controlar melhor as finanças com IA</div>
-      <div class="forwho-item">Profissionais que querem se reposicionar no mercado de trabalho</div>
-      <div class="forwho-item">Quem quer criar renda extra vendendo soluções de IA</div>
-      <div class="forwho-item">Iniciantes sem nenhuma experiência com programação</div>
-      <div class="forwho-item">Investidores que querem usar IA para analisar ativos da B3</div>
-    </div>
-  </div>
-
-  <!-- O QUE VOCÊ VAI APRENDER -->
-  <div class="block">
-    <h2>📚 O que você vai aprender</h2>
-    <div class="modules">
-      <div class="module">
-        <div class="module-num">01</div>
-        <div>
-          <strong>Fundamentos de IA sem código</strong>
-          <span>Entenda como a IA funciona e como usar ferramentas sem programar</span>
-        </div>
-      </div>
-      <div class="module">
-        <div class="module-num">02</div>
-        <div>
-          <strong>Google Gemini na prática</strong>
-          <span>Use o modelo mais avançado do Google para automação de tarefas</span>
-        </div>
-      </div>
-      <div class="module">
-        <div class="module-num">03</div>
-        <div>
-          <strong>Python do zero para IA financeira</strong>
-          <span>Scripts simples para análise de dados e previsão de caixa</span>
-        </div>
-      </div>
-      <div class="module">
-        <div class="module-num">04</div>
-        <div>
-          <strong>Criação de Agentes de IA</strong>
-          <span>Construa bots que executam tarefas, respondem clientes e geram relatórios</span>
-        </div>
-      </div>
-      <div class="module">
-        <div class="module-num">05</div>
-        <div>
-          <strong>IA para Finanças Pessoais e PME</strong>
-          <span>Detecte gastos ocultos, preveja receitas e tome decisões com dados</span>
-        </div>
-      </div>
-      <div class="module">
-        <div class="module-num">06</div>
-        <div>
-          <strong>Análise de Ações com IA</strong>
-          <span>Use Python + Gemini para analisar ativos da B3 sem ser especialista</span>
-        </div>
-      </div>
-      <div class="module">
-        <div class="module-num">07</div>
-        <div>
-          <strong>Monetização com IA</strong>
-          <span>Crie e venda agentes de IA como infoprodutos na Hotmart e Kiwify</span>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- GARANTIA -->
-  <div class="block">
-    <div class="guarantee-box">
-      <span class="g-icon">🛡️</span>
-      <div>
-        <h3>Garantia Incondicional de 7 dias</h3>
-        <p>Se por qualquer motivo você não ficar satisfeito nos primeiros 7 dias, é só pedir reembolso. 100% do seu dinheiro de volta, sem burocracia e sem questionamentos. O risco é zero — o ganho é real.</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- FAQ -->
-  <div class="block">
-    <h2>❓ Dúvidas Frequentes</h2>
-    <div class="faq">
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">Preciso saber programar para fazer o curso?</div>
-        <div class="faq-a"><div class="faq-a-inner">Não. O curso foi desenvolvido para iniciantes. Você vai aprender desde o básico, com linguagem simples e projetos práticos. Se souber usar um smartphone, você consegue acompanhar.</div></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">Quanto tempo vou levar para ver resultados?</div>
-        <div class="faq-a"><div class="faq-a-inner">A maioria dos alunos cria seu primeiro agente de IA nas primeiras 2 semanas de curso. Resultados financeiros aparecem quando você começa a aplicar as ferramentas — e isso acontece desde os primeiros módulos.</div></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">O acesso é vitalício?</div>
-        <div class="faq-a"><div class="faq-a-inner">Sim. Você tem acesso por 1 ano, com possibilidade de renovação. Todas as atualizações de conteúdo são incluídas sem custo adicional enquanto tiver acesso.</div></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">Funciona para PME ou só para pessoa física?</div>
-        <div class="faq-a"><div class="faq-a-inner">Os dois. O curso tem módulos específicos para finanças pessoais e para gestão de pequenas e médias empresas. Você escolhe o caminho que faz mais sentido para o seu momento.</div></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">Como funciona o pagamento?</div>
-        <div class="faq-a"><div class="faq-a-inner">O pagamento é processado pela Hotmart, plataforma líder no Brasil em cursos digitais. Você pode pagar à vista com desconto ou parcelar em até 12x no cartão. O acesso é liberado imediatamente após a confirmação.</div></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- FINAL CTA -->
-  <div class="final-cta">
-    <h2>Sua próxima decisão define<br>o próximo ano</h2>
-    <p>Quem aprender IA agora vai estar 2 anos à frente de quem esperar.<br>O custo de não agir é maior do que o do curso.</p>
-    <a href="https://experttcursos.com.br/inteligenciaartificial?ref=F106385760R"
-       target="_blank" rel="noopener"
-       class="btn-cta"
-       style="max-width:380px; margin:0 auto 16px;"
-       onclick="trackClick('final_cta')">
-      🚀 Quero Começar Agora — R$497
-    </a>
-    <div class="guarantee-line" style="justify-content:center;">🔒 Garantia de 7 dias • Acesso imediato • Parcelamento em 12x</div>
-  </div>
-
-</div>
-
-<!-- STICKY MOBILE BAR -->
-<div class="sticky-bar">
-  <a href="https://experttcursos.com.br/inteligenciaartificial?ref=F106385760R"
-     target="_blank" rel="noopener"
-     class="btn-cta"
-     onclick="trackClick('sticky_bar')">
-    🚀 Quero o Curso — R$497
+  <a href="https://go.hotmart.com/F106385760R?ap=c684" class="cta-btn" target="_blank" rel="noopener">
+    🚀 Quero Começar Agora
   </a>
+  <div class="guarantee-line">🔒 7 dias de garantia — risco zero</div>
+</div>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stat-item">
+    <span class="stat-num">+85mil</span>
+    <span class="stat-label">Alunos formados</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-num">30h</span>
+    <span class="stat-label">de conteúdo</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-num">40</span>
+    <span class="stat-label">Aulas em vídeo</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-num">10</span>
+    <span class="stat-label">Módulos completos</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-num">Vitalício</span>
+    <span class="stat-label">Acesso permanente</span>
+  </div>
+</div>
+
+<!-- MODULES -->
+<div class="container">
+  <h2 class="section-title">📚 O que você vai aprender</h2>
+  <p class="section-sub">10 módulos do zero ao avançado, atualizados com as ferramentas mais usadas em 2026.</p>
+
+  <div class="modules">
+    <div class="module">
+      <div class="module-num">01</div>
+      <div>
+        <h4>Introdução à Inteligência Artificial</h4>
+        <p>Fundamentos da IA, histórico, conceitos essenciais e o panorama atual das principais tecnologias disponíveis.</p>
+      </div>
+    </div>
+    <div class="module">
+      <div class="module-num">02</div>
+      <div>
+        <h4>ChatGPT e Modelos de Linguagem</h4>
+        <p>Como usar o ChatGPT de forma profissional, engenharia de prompts avançada e integração com fluxos de trabalho.</p>
+      </div>
+    </div>
+    <div class="module">
+      <div class="module-num">03</div>
+      <div>
+        <h4>Google Gemini e Bard</h4>
+        <p>Domine o ecossistema Google de IA — Gemini, NotebookLM e integração com Google Workspace.</p>
+      </div>
+    </div>
+    <div class="module">
+      <div class="module-num">04</div>
+      <div>
+        <h4>IA para Imagens e Design</h4>
+        <p>Midjourney, DALL-E, Stable Diffusion — crie imagens profissionais, logos e artes para negócios.</p>
+      </div>
+    </div>
+    <div class="module">
+      <div class="module-num">05</div>
+      <div>
+        <h4>IA para Vídeos e Áudio</h4>
+        <p>Ferramentas para criar, editar e narrar vídeos com IA — Runway, ElevenLabs, HeyGen e mais.</p>
+      </div>
+    </div>
+    <div class="module">
+      <div class="module-num">06</div>
+      <div>
+        <h4>Automação e Agentes de IA</h4>
+        <p>Construa fluxos automáticos com Make, n8n e crie seus primeiros agentes que trabalham por você 24h.</p>
+      </div>
+    </div>
+    <div class="module">
+      <div class="module-num">07</div>
+      <div>
+        <h4>IA para Negócios e Marketing</h4>
+        <p>Aplique IA em estratégias de marketing, vendas, atendimento ao cliente e geração de conteúdo em escala.</p>
+      </div>
+    </div>
+    <div class="module">
+      <div class="module-num">08</div>
+      <div>
+        <h4>IA para Análise de Dados</h4>
+        <p>Python básico com IA, análise de planilhas, visualização de dados e dashboards inteligentes sem complicação.</p>
+      </div>
+    </div>
+    <div class="module">
+      <div class="module-num">09</div>
+      <div>
+        <h4>IA para Produtividade Pessoal</h4>
+        <p>Como usar IA para organizar sua agenda, gerenciar projetos, redigir e-mails e automatizar tarefas do dia a dia.</p>
+      </div>
+    </div>
+    <div class="module">
+      <div class="module-num">10</div>
+      <div>
+        <h4>IA para Finanças e Investimentos</h4>
+        <p>Use IA para analisar ações da B3, controlar gastos, prever fluxo de caixa e tomar decisões financeiras melhores.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- BONUSES -->
+<div class="container" style="padding-top:0">
+  <h2 class="section-title">🎁 Bônus Exclusivos</h2>
+  <p class="section-sub">Incluso no seu acesso, sem custo extra.</p>
+  <div class="bonuses">
+    <div class="bonus">
+      <span class="bonus-icon">💻</span>
+      <h4>Aulas Extras — IA para Coding</h4>
+      <p>Como usar IA para programar, mesmo sem experiência técnica.</p>
+    </div>
+    <div class="bonus">
+      <span class="bonus-icon">🎨</span>
+      <h4>IA para Renderização 3D</h4>
+      <p>Criação de imagens e ambientes 3D com ferramentas de IA.</p>
+    </div>
+    <div class="bonus">
+      <span class="bonus-icon">🤖</span>
+      <h4>Módulo Agentes de IA</h4>
+      <p>Como criar e deployar seus próprios agentes autônomos.</p>
+    </div>
+    <div class="bonus">
+      <span class="bonus-icon">📄</span>
+      <h4>Apostila PDF Completa</h4>
+      <p>Material de apoio para consultar offline quando quiser.</p>
+    </div>
+    <div class="bonus">
+      <span class="bonus-icon">👥</span>
+      <h4>Comunidade Exclusiva</h4>
+      <p>Acesso ao grupo de alunos para networking e suporte.</p>
+    </div>
+    <div class="bonus">
+      <span class="bonus-icon">🎓</span>
+      <h4>Carteirinha de Estudante</h4>
+      <p>Certificado digital reconhecido com validade nacional.</p>
+    </div>
+  </div>
+</div>
+
+<!-- TESTIMONIALS -->
+<div class="container" style="padding-top:0">
+  <h2 class="section-title">⭐ O que os alunos dizem</h2>
+  <p class="section-sub">+85 mil pessoas que já transformaram sua relação com a tecnologia.</p>
+  <div class="testimonials">
+    <div class="testimonial">
+      <div class="stars">★★★★★</div>
+      <p>"Fiz o Curso de Inteligência Artificial, foi um curso muito completo para quem nunca teve acesso a IA. Ótimo para entender todas as ferramentas principais atuais e fazer suas primeiras análises e automações."</p>
+      <div class="testimonial-name">Juliana Rosa</div>
+    </div>
+    <div class="testimonial">
+      <div class="stars">★★★★★</div>
+      <p>"Acabei de concluir o Curso de IA, foi excelente, abriu muito a minha visão. O professor tem uma didática maravilhosa. Já comecei a usar várias IAs e meu certificado já está pronto — vou usar como horas complementares na faculdade."</p>
+      <div class="testimonial-name">José Roberto</div>
+    </div>
+    <div class="testimonial">
+      <div class="stars">★★★★★</div>
+      <p>"O que eu mais gostei foi a didática do professor, a forma como ele ensina e ministra as aulas. Quem for fazer o curso, recomendo bastante — é o que a gente mais usa no dia a dia."</p>
+      <div class="testimonial-name">Gabriel de Holanda</div>
+    </div>
+    <div class="testimonial">
+      <div class="stars">★★★★★</div>
+      <p>"Confesso que antes de fazer o curso eu pensava que sabia bastante sobre IA, mas assim que comecei vi que tinham muitas coisas para aprender. Estou muito satisfeita com a didática simples e objetiva."</p>
+      <div class="testimonial-name">Carla Hara</div>
+    </div>
+  </div>
+</div>
+
+<!-- INSTRUCTOR -->
+<div class="container" style="padding-top:0">
+  <h2 class="section-title">👨‍🏫 Sobre o Produtor</h2>
+  <div class="instructor-box">
+    <div class="instructor-avatar">E</div>
+    <div>
+      <h3>Expert Cursos</h3>
+      <p>Plataforma de educação especializada em tecnologia e IA com mais de 85.000 alunos formados. O professor Diogo é referência nacional em ensino de inteligência artificial — conhecido pela didática acessível que torna conceitos complexos simples para qualquer pessoa, mesmo sem background técnico.</p>
+    </div>
+  </div>
+</div>
+
+<!-- GUARANTEE -->
+<div class="container" style="padding-top:0">
+  <div class="guarantee-box">
+    <span class="g-icon">🔒</span>
+    <h3>Garantia de 7 Dias</h3>
+    <p>Se por qualquer motivo você não ficar satisfeito com o curso nos primeiros 7 dias após a compra, basta entrar em contato e devolvemos 100% do seu dinheiro. Sem burocracia, sem perguntas. Você não corre nenhum risco.</p>
+  </div>
+</div>
+
+<!-- FAQ -->
+<div class="container" style="padding-top:0">
+  <h2 class="section-title">❓ Perguntas Frequentes</h2>
+  <div class="faq">
+    <div class="faq-item">
+      <h4>Preciso ter conhecimento prévio em tecnologia?</h4>
+      <p>Não. O curso foi desenvolvido do zero para qualquer pessoa — mesmo sem experiência com programação ou IA.</p>
+    </div>
+    <div class="faq-item">
+      <h4>Por quanto tempo terei acesso ao curso?</h4>
+      <p>O acesso é vitalício. Você assiste quando quiser, quantas vezes quiser, e recebe todas as atualizações futuras sem custo adicional.</p>
+    </div>
+    <div class="faq-item">
+      <h4>O curso tem certificado?</h4>
+      <p>Sim. Ao concluir o curso você recebe um certificado digital com validade nacional, podendo ser usado como horas complementares em faculdades.</p>
+    </div>
+    <div class="faq-item">
+      <h4>Posso assistir pelo celular?</h4>
+      <p>Sim. A plataforma Hotmart é totalmente responsiva — você acessa do computador, tablet ou smartphone sem nenhum problema.</p>
+    </div>
+    <div class="faq-item">
+      <h4>Como funciona a garantia?</h4>
+      <p>Você tem 7 dias após a compra para pedir reembolso completo, sem nenhuma justificativa necessária. É uma garantia incondicional.</p>
+    </div>
+    <div class="faq-item">
+      <h4>O conteúdo é atualizado?</h4>
+      <p>Sim. O curso é atualizado constantemente com as novas ferramentas de IA do mercado. Quem compra recebe todas as atualizações gratuitamente.</p>
+    </div>
+    <div class="faq-item">
+      <h4>Como acesso o curso após a compra?</h4>
+      <p>Você receberá um e-mail com o acesso à plataforma Hotmart imediatamente após a confirmação do pagamento.</p>
+    </div>
+  </div>
+</div>
+
+<!-- FINAL CTA -->
+<div class="container" style="padding-top:0">
+  <div class="final-cta">
+    <h2>Comece hoje mesmo</h2>
+    <p>Acesse por R$97 e domine as ferramentas de IA mais usadas no mercado. Acesso vitalício, garantia de 7 dias.</p>
+    <a href="https://go.hotmart.com/F106385760R?ap=c684" class="cta-btn" target="_blank" rel="noopener">
+      🚀 Quero o Curso — R$97
+    </a>
+    <div class="guarantee-line" style="margin-top:16px; font-size:13px; color:rgba(255,255,255,.6)">ou 12x de R$10,03 · 🔒 Garantia de 7 dias</div>
+  </div>
 </div>
 
 <!-- FOOTER -->
 <footer>
-  <a href="index.html">← Voltar para Myster_IA</a>
-  <div class="disclaimer">
-    Este site contém links de afiliados (ref=F106385760R). Ao comprar através do nosso link, você apoia o projeto Myster_IA sem custo adicional. Os preços podem variar. Resultados individuais dependem da dedicação de cada aluno.
-  </div>
+  <div class="footer-logo">Myster<span>_IA</span></div>
+  <p>Curadoria de cursos de IA, Finanças e Marketing Digital</p>
+  <p class="disclaimer">
+    Este site contém links de afiliados da Hotmart. Ao comprar através dos nossos links, você apoia este projeto sem custo adicional.
+    Resultados individuais podem variar. Este site não tem vínculo oficial com a Expert Cursos ou Hotmart.
+  </p>
 </footer>
 
-<script>
-  // ── FAQ toggle ──
-  function toggleFaq(el) {
-    el.parentElement.classList.toggle('open');
-  }
-
-  // ── Rastreamento de cliques (prepare para o pixel) ──
-  function trackClick(source) {
-    console.log('CTA clicado:', source);
-
-    // Descomente quando tiver o pixel TikTok ativo:
-    // if (window.ttq) ttq.track('ClickButton', { content_name: 'curso-ia-' + source });
-
-    // Descomente quando tiver o pixel Meta ativo:
-    // if (window.fbq) fbq('track', 'InitiateCheckout', { content_name: 'curso-ia-' + source });
-  }
-
-  // ── Oculta sticky bar se CTA principal estiver visível ──
-  const heroCta = document.querySelector('.cta-block');
-  const stickyBar = document.querySelector('.sticky-bar');
-
-  if (heroCta && stickyBar) {
-    const obs = new IntersectionObserver(([e]) => {
-      stickyBar.style.display = e.isIntersecting ? 'none' : 'block';
-    }, { threshold: 0.5 });
-    obs.observe(heroCta);
-  }
-</script>
+<!-- STICKY BAR -->
+<div class="sticky-bar">
+  <p>🚀 Curso de IA — <strong>R$97</strong> (12x de R$10,03)</p>
+  <a href="https://go.hotmart.com/F106385760R?ap=c684" target="_blank" rel="noopener">Quero Começar Agora →</a>
+</div>
 
 </body>
 </html>
