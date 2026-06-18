@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pacote Essencial DGM — IA Aplicada em Finanças | Myster_IA</title>
+  <meta name="description" content="4 materiais práticos para profissionais de FP&A, Controladoria e Custos que querem aplicar IA hoje, sem precisar saber programar. R$ 97 com garantia de 7 dias." />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%237c3aed'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='system-ui,sans-serif' font-weight='900' font-size='18' fill='white'%3EM%3C/text%3E%3Ccircle cx='24' cy='8' r='4' fill='%2310b981'/%3E%3C/svg%3E">
+
+  <style>
+    :root {
+      --bg: #0a0a12;
+      --bg2: #11111f;
+      --bg3: #18182a;
+      --purple: #7c3aed;
+      --purple-light: #a78bfa;
+      --purple-dark: #5b21b6;
+      --green: #10b981;
+      --yellow: #f59e0b;
+      --red: #ef4444;
+      --text: #f1f0ff;
+      --text-muted: #8b8aa8;
+      --border: #2a2a3e;
+      --radius: 14px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; line-height: 1.6; }
+    a { color: inherit; text-decoration: none; }
+
+    /* HEADER */
+    header {
+      padding: 16px 24px;
+      display: flex; align-items: center; justify-content: space-between;
+      border-bottom: 1px solid var(--border);
+      position: sticky; top: 0;
+      background: rgba(10,10,18,0.95);
+      backdrop-filter: blur(12px);
+      z-index: 200;
+    }
+    .header-cta {
+      background: var(--green); color: #000;
+      font-weight: 800; font-size: 13px;
+      padding: 8px 18px; border-radius: 8px;
+      transition: opacity .2s;
+    }
+    .header-cta:hover { opacity: .85; }
+
+    /* STICKY BAR */
+    .sticky-bar {
+      position: fixed; bottom: 0; left: 0; right: 0;
+      background: linear-gradient(90deg, var(--purple-dark), var(--purple));
+      padding: 14px 24px;
+      display: flex; align-items: center; justify-content: center; gap: 20px;
+      z-index: 300;
+      box-shadow: 0 -4px 20px rgba(0,0,0,.4);
+    }
+    .sticky-bar p { font-size: 14px; font-weight: 700; }
+    .sticky-bar a {
+      background: var(--green); color: #000;
+      font-weight: 800; font-size: 14px;
+      padding: 10px 24px; border-radius: 8px;
+      white-space: nowrap;
+    }
+
+    /* HERO */
+    .hero {
+      padding: 64px 24px 48px;
+      text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(124,58,237,.22) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .badge {
+      display: inline-block;
+      background: rgba(245,158,11,.15);
+      border: 1px solid rgba(245,158,11,.35);
+      color: var(--yellow);
+      font-size: 11px; font-weight: 700;
+      letter-spacing: .1em; text-transform: uppercase;
+      padding: 5px 14px; border-radius: 20px;
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-size: clamp(26px, 5vw, 50px);
+      font-weight: 900; line-height: 1.12; letter-spacing: -1px;
+      margin-bottom: 18px;
+    }
+    .hero h1 .hl {
+      background: linear-gradient(135deg, var(--purple-light), var(--green));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero-sub {
+      font-size: 17px; color: var(--text-muted);
+      max-width: 620px; margin: 0 auto 32px;
+    }
+    .price-block { margin-bottom: 28px; }
+    .price-from { font-size: 14px; color: var(--text-muted); text-decoration: line-through; }
+    .price-main { font-size: 52px; font-weight: 900; color: var(--green); line-height: 1; }
+    .price-installment { font-size: 14px; color: var(--text-muted); margin-top: 4px; }
+    .cta-btn {
+      display: inline-block;
+      background: var(--green); color: #000;
+      font-weight: 900; font-size: 18px;
+      padding: 18px 52px; border-radius: 12px;
+      transition: transform .15s, box-shadow .15s;
+      box-shadow: 0 0 30px rgba(16,185,129,.3);
+    }
+    .cta-btn:hover { transform: scale(1.03); box-shadow: 0 0 44px rgba(16,185,129,.55); }
+    .guarantee-line { margin-top: 14px; font-size: 12px; color: var(--text-muted); }
+
+    /* STATS BAR */
+    .stats-bar {
+      background: var(--bg2);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      display: flex; justify-content: center; flex-wrap: wrap; gap: 0;
+    }
+    .stat-item { padding: 20px 36px; text-align: center; border-right: 1px solid var(--border); }
+    .stat-item:last-child { border-right: none; }
+    .stat-num { display: block; font-size: 26px; font-weight: 900; color: var(--purple-light); }
+    .stat-label { font-size: 12px; color: var(--text-muted); }
+
+    /* SECTIONS */
+    .container { max-width: 860px; margin: 0 auto; padding: 56px 24px; }
+    .section-title { font-size: 26px; font-weight: 800; margin-bottom: 8px; }
+    .section-sub { font-size: 15px; color: var(--text-muted); margin-bottom: 36px; }
+
+    /* MATERIAIS */
+    .materials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+      gap: 16px;
+    }
+    .material-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      display: flex; gap: 18px; align-items: flex-start;
+      transition: border-color .2s, transform .2s;
+    }
+    .material-card:hover { border-color: var(--purple); transform: translateY(-2px); }
+    .material-icon {
+      font-size: 32px; flex-shrink: 0;
+      width: 52px; height: 52px;
+      background: rgba(124,58,237,.15);
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .material-card h4 { font-size: 15px; font-weight: 800; margin-bottom: 6px; color: var(--purple-light); }
+    .material-card p { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+    .material-tag {
+      display: inline-block;
+      font-size: 10px; font-weight: 700; letter-spacing: .07em;
+      text-transform: uppercase;
+      background: rgba(16,185,129,.12);
+      color: var(--green);
+      border: 1px solid rgba(16,185,129,.25);
+      padding: 2px 8px; border-radius: 4px;
+      margin-bottom: 8px;
+    }
+
+    /* PARA QUEM É */
+    .audience-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 14px;
+    }
+    .audience-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px 16px;
+      text-align: center;
+    }
+    .audience-card .a-icon { font-size: 28px; margin-bottom: 10px; display: block; }
+    .audience-card h4 { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+    .audience-card p { font-size: 12px; color: var(--text-muted); }
+
+    /* RESULTADOS */
+    .results-list { display: flex; flex-direction: column; gap: 12px; }
+    .result-item {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--green);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 16px 20px;
+      display: flex; align-items: flex-start; gap: 14px;
+    }
+    .result-item .r-check {
+      color: var(--green); font-size: 18px; flex-shrink: 0; margin-top: 2px;
+    }
+    .result-item p { font-size: 14px; line-height: 1.55; }
+    .result-item strong { color: var(--text); }
+
+    /* GUARANTEE */
+    .guarantee-box {
+      background: linear-gradient(135deg, rgba(16,185,129,.08), rgba(124,58,237,.08));
+      border: 1px solid rgba(16,185,129,.3);
+      border-radius: var(--radius); padding: 40px;
+      text-align: center;
+    }
+    .guarantee-box .g-icon { font-size: 52px; margin-bottom: 14px; display: block; }
+    .guarantee-box h3 { font-size: 22px; font-weight: 800; margin-bottom: 10px; }
+    .guarantee-box p { font-size: 15px; color: var(--text-muted); max-width: 520px; margin: 0 auto; }
+
+    /* FAQ */
+    .faq { display: flex; flex-direction: column; gap: 12px; }
+    .faq-item {
+      background: var(--bg2); border: 1px solid var(--border);
+      border-radius: 10px; padding: 20px;
+    }
+    .faq-item h4 { font-size: 15px; font-weight: 700; margin-bottom: 8px; color: var(--purple-light); }
+    .faq-item p { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
+
+    /* FINAL CTA */
+    .final-cta {
+      background: linear-gradient(135deg, var(--purple-dark), var(--purple));
+      border-radius: var(--radius); padding: 60px 40px;
+      text-align: center;
+    }
+    .final-cta h2 { font-size: 30px; font-weight: 900; margin-bottom: 12px; }
+    .final-cta p { font-size: 16px; color: rgba(255,255,255,.78); margin-bottom: 32px; max-width: 500px; margin-left: auto; margin-right: auto; }
+
+    /* WHAT'S INSIDE BOX */
+    .inside-box {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      margin: 32px 0;
+    }
+    .inside-box h4 { font-size: 14px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: .08em; margin-bottom: 16px; }
+    .inside-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .inside-list li { font-size: 14px; display: flex; align-items: center; gap: 10px; }
+    .inside-list li::before { content: '✓'; color: var(--green); font-weight: 800; flex-shrink: 0; }
+
+    /* DIVIDER */
+    .section-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 0;
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 24px 90px;
+      text-align: center;
+      font-size: 12px; color: var(--text-muted);
+    }
+    footer .footer-logo { font-size: 18px; font-weight: 800; margin-bottom: 8px; }
+    footer .footer-logo span { color: var(--purple-light); }
+    footer .disclaimer { max-width: 600px; margin: 12px auto 0; line-height: 1.6; opacity: .7; }
+
+    @media (max-width: 640px) {
+      .stats-bar { flex-direction: column; }
+      .stat-item { border-right: none; border-bottom: 1px solid var(--border); }
+      .materials-grid { grid-template-columns: 1fr; }
+      .sticky-bar { flex-direction: column; gap: 10px; }
+      .final-cta { padding: 40px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <a href="index.html" style="display:flex;align-items:center;gap:10px;text-decoration:none;">
+    <img src="data:image/jpeg;base64,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" alt="" height="38" style="border-radius:50%;border:2px solid #7c3aed;flex-shrink:0;">
+    <div style="line-height:1.25;">
+      <div style="font-weight:800;font-size:17px;color:#f1f0ff;">Myster<span style="color:#a78bfa;">_IA</span></div>
+      <div style="font-size:10px;font-weight:600;color:#8b8aa8;letter-spacing:.04em;">Finanças + Inteligência Artificial</div>
+    </div>
+  </a>
+  <a href="https://go.hotmart.com/T106355098S?dp=1" class="header-cta" target="_blank" rel="noopener">Garantir Agora →</a>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="badge">🧠 IA + Finanças Corporativas</div>
+  <h1>Aplique <span class="hl">IA nas suas Finanças</span><br>a partir de hoje</h1>
+  <p class="hero-sub">4 materiais práticos para profissionais de FP&amp;A, Controladoria e Custos que querem automatizar relatórios, usar prompts certos e tomar decisões mais rápidas — sem precisar saber programar.</p>
+
+  <div class="price-block">
+    <div class="price-from">De R$297</div>
+    <div class="price-main">R$97</div>
+    <div class="price-installment">acesso imediato · garantia de 7 dias</div>
+  </div>
+
+  <a href="https://go.hotmart.com/T106355098S?dp=1" class="cta-btn" target="_blank" rel="noopener">
+    📊 Quero Aplicar IA nas Finanças
+  </a>
+  <p class="guarantee-line">🔒 Compra segura via Hotmart · Garantia incondicional de 7 dias</p>
+</div>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stat-item">
+    <span class="stat-num">4</span>
+    <span class="stat-label">Materiais Práticos</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-num">50+</span>
+    <span class="stat-label">Prompts Testados</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-num">3</span>
+    <span class="stat-label">Templates Power BI</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-num">7 dias</span>
+    <span class="stat-label">Garantia Total</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-num">R$97</span>
+    <span class="stat-label">Acesso Vitalício</span>
+  </div>
+</div>
+
+<!-- O QUE ESTÁ INCLUÍDO -->
+<hr class="section-divider">
+<div class="container">
+  <h2 class="section-title">O que está incluído no Pacote</h2>
+  <p class="section-sub">Quatro ferramentas prontas para usar hoje — sem curva de aprendizado longa, sem precisar de TI.</p>
+
+  <div class="materials-grid">
+
+    <div class="material-card">
+      <div class="material-icon">📘</div>
+      <div>
+        <div class="material-tag">Material 1</div>
+        <h4>Guia IA no FP&amp;A — Do Dado à Decisão</h4>
+        <p>9 módulos com aplicações reais de IA no dia a dia do planejamento financeiro. Automatize a consolidação de dados, gere análises de variação e transforme números em narrativas claras para a diretoria.</p>
+      </div>
+    </div>
+
+    <div class="material-card">
+      <div class="material-icon">💬</div>
+      <div>
+        <div class="material-tag">Material 2</div>
+        <h4>Biblioteca de 50 Prompts para Finanças Corporativas</h4>
+        <p>50 comandos testados na prática para análise de variação, narrativa de resultados, previsão de fluxo de caixa e identificação de anomalias. Copie, cole e adapte em segundos.</p>
+      </div>
+    </div>
+
+    <div class="material-card">
+      <div class="material-icon">✅</div>
+      <div>
+        <div class="material-tag">Material 3</div>
+        <h4>Checklist de Automação de Relatórios com Copilot</h4>
+        <p>Passo a passo completo para usar a IA do Microsoft 365 no Word, Excel, PowerPoint e Teams. Automatize seus relatórios recorrentes de FP&amp;A e Controladoria de uma vez por todas.</p>
+      </div>
+    </div>
+
+    <div class="material-card">
+      <div class="material-icon">📊</div>
+      <div>
+        <div class="material-tag">Material 4</div>
+        <h4>Guia de Templates Power BI para FP&amp;A e Controladoria</h4>
+        <p>3 dashboards prontos — DRE com variação mês a mês, fluxo de caixa com projeção e análise de custos por centro. Conecta nos seus dados e já tem um painel profissional pronto para apresentar.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- PARA QUEM É -->
+<hr class="section-divider">
+<div class="container" style="padding-top:48px;padding-bottom:48px;">
+  <h2 class="section-title">Para quem é este pacote?</h2>
+  <p class="section-sub">Feito especificamente para profissionais que trabalham com números todos os dias.</p>
+
+  <div class="audience-grid">
+    <div class="audience-card">
+      <span class="a-icon">📈</span>
+      <h4>FP&amp;A</h4>
+      <p>Planejamento financeiro e análise de performance</p>
+    </div>
+    <div class="audience-card">
+      <span class="a-icon">🏦</span>
+      <h4>Controladoria</h4>
+      <p>Gestão de resultados, DRE e relatórios gerenciais</p>
+    </div>
+    <div class="audience-card">
+      <span class="a-icon">💰</span>
+      <h4>Custos</h4>
+      <p>Análise de custos, centros e margens</p>
+    </div>
+    <div class="audience-card">
+      <span class="a-icon">📋</span>
+      <h4>Analistas Financeiros</h4>
+      <p>Que querem entregar mais rápido e com mais qualidade</p>
+    </div>
+  </div>
+</div>
+
+<!-- O QUE VOCÊ VAI CONSEGUIR FAZER -->
+<hr class="section-divider">
+<div class="container" style="padding-top:48px;padding-bottom:48px;">
+  <h2 class="section-title">O que você vai conseguir fazer</h2>
+  <p class="section-sub">Resultados concretos, não teoria.</p>
+
+  <div class="results-list">
+    <div class="result-item">
+      <span class="r-check">✓</span>
+      <p><strong>Fechar relatório mensal em horas, não dias</strong> — com automação via Copilot e IA, o que levava 2 dias cai para uma manhã.</p>
+    </div>
+    <div class="result-item">
+      <span class="r-check">✓</span>
+      <p><strong>Fazer as perguntas certas para o ChatGPT</strong> — 50 prompts prontos para análise financeira real, não respostas genéricas.</p>
+    </div>
+    <div class="result-item">
+      <span class="r-check">✓</span>
+      <p><strong>Apresentar dashboards profissionais sem criar nada do zero</strong> — 3 templates Power BI prontos para conectar nos seus dados.</p>
+    </div>
+    <div class="result-item">
+      <span class="r-check">✓</span>
+      <p><strong>Transformar dados brutos em narrativa para a diretoria</strong> — usando IA para gerar análises de variação e insights automáticos.</p>
+    </div>
+    <div class="result-item">
+      <span class="r-check">✓</span>
+      <p><strong>Automatizar tarefas repetitivas sem precisar do TI</strong> — o Copilot já está no seu Word, Excel e PowerPoint. Você só precisa saber usá-lo.</p>
+    </div>
+  </div>
+</div>
+
+<!-- GARANTIA -->
+<hr class="section-divider">
+<div class="container" style="padding-top:48px;padding-bottom:48px;">
+  <div class="guarantee-box">
+    <span class="g-icon">🛡️</span>
+    <h3>Garantia Incondicional de 7 Dias</h3>
+    <p>Se por qualquer motivo você não ficar satisfeito nos primeiros 7 dias, devolvemos 100% do seu dinheiro. Sem perguntas, sem burocracia. Risco zero para você.</p>
+  </div>
+</div>
+
+<!-- FAQ -->
+<hr class="section-divider">
+<div class="container" style="padding-top:48px;padding-bottom:48px;">
+  <h2 class="section-title">Dúvidas frequentes</h2>
+  <p class="section-sub">Respondendo o que todo mundo pergunta antes de comprar.</p>
+
+  <div class="faq">
+    <div class="faq-item">
+      <h4>Preciso saber programar para usar o Pacote?</h4>
+      <p>Não. Todo o material foi desenvolvido para profissionais de finanças, não de TI. Você usa as ferramentas que já tem (Excel, Word, PowerPoint, ChatGPT) com orientações práticas e diretas.</p>
+    </div>
+    <div class="faq-item">
+      <h4>Em quanto tempo tenho acesso após a compra?</h4>
+      <p>O acesso é imediato. Assim que o pagamento for confirmado, você recebe o link por e-mail e pode começar na mesma hora.</p>
+    </div>
+    <div class="faq-item">
+      <h4>Funciona para quem nunca usou IA no trabalho?</h4>
+      <p>Sim. O material começa do básico e vai direto ao ponto. Se você sabe usar o ChatGPT ou o Copilot no nível mais básico, já é suficiente para aproveitar tudo.</p>
+    </div>
+    <div class="faq-item">
+      <h4>Os Templates Power BI funcionam com qualquer base de dados?</h4>
+      <p>Os templates são compatíveis com as principais fontes de dados: Excel, CSV, SQL e bancos de dados corporativos. Você conecta nos seus dados e personaliza conforme necessário.</p>
+    </div>
+    <div class="faq-item">
+      <h4>E se eu não gostar?</h4>
+      <p>Você tem 7 dias de garantia incondicional. Basta solicitar o reembolso dentro do prazo e devolvemos 100% do valor sem questionamento.</p>
+    </div>
+  </div>
+</div>
+
+<!-- FINAL CTA -->
+<div class="container" style="padding-top:0;padding-bottom:72px;">
+  <div class="final-cta">
+    <h2>Comece a aplicar IA nas suas finanças hoje</h2>
+    <p>4 materiais práticos. Acesso imediato. Resultado no primeiro uso. Por apenas R$97 com garantia de 7 dias.</p>
+    <a href="https://go.hotmart.com/T106355098S?dp=1" class="cta-btn" target="_blank" rel="noopener" style="font-size:17px;">
+      📊 Garantir Meu Acesso Agora
+    </a>
+    <p style="margin-top:16px;font-size:12px;color:rgba(255,255,255,.5);">🔒 Compra 100% segura via Hotmart · Garantia de 7 dias</p>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Myster<span>_IA</span></div>
+  <p>Curadoria de ferramentas de IA para finanças por Tarcisio — @MYSTER_IA no TikTok</p>
+  <p class="disclaimer">Este site contém links de afiliado. Ao comprar por nossos links, você nos apoia sem pagar nada a mais. Os produtos recomendados são selecionados pela qualidade e relevância para profissionais de finanças.</p>
+</footer>
+
+<!-- STICKY BAR -->
+<div class="sticky-bar">
+  <p>📊 Pacote Essencial DGM — IA em Finanças · R$97</p>
+  <a href="https://go.hotmart.com/T106355098S?dp=1" target="_blank" rel="noopener">Garantir Agora →</a>
+</div>
+
+</body>
+</html>
